@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: skeleton
+# Cookbook Name:: sql_restore
 # Recipe:: default
 #
 # Copyright (C) YEAR YOUR_NAME <YOUR_EMAIL>
@@ -17,9 +17,17 @@
 # limitations under the License.
 #
 
-# Install/configure something here
-# Replace this with meaningful resources
+include_recipe "powershell::powershell4"
 
-package 'vim' do
-  action :install
+
+# Extracting the Microsoft DSC Resource Kit into Powershell Modules
+remote_file "#{Chef::Config[:file_cache_path]}\\DSCKit_Wave8.zip" do
+  source 'https://gallery.technet.microsoft.com/scriptcenter/DSC-Resource-Kit-All-c449312d/file/129525/1/DSC%20Resource%20Kit%20Wave%208%2011102014.zip'
 end
+
+windows_zipfile "#{ENV['PROGRAMW6432']}\\WindowsPowerShell\\Modules" do
+  source "#{Chef::Config[:file_cache_path]}\\DSCKit_Wave8.zip"
+  action :unzip
+  not_if { ::File.exists?("#{ENV['PROGRAMW6432']}\\WindowsPowerShell\\Modules\\All Resources\\xPSDesiredStateConfiguration\\xPSDesiredStateConfiguration.psd1") }
+end
+

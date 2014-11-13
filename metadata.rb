@@ -1,4 +1,4 @@
-name              'sql-restore'
+name              'sql_restore'
 maintainer        'Galen Emery'
 maintainer_email  'galen@getchef.com'
 license           'Apache 2.0'
@@ -8,3 +8,6 @@ version           '0.1.0'
 recipe            'sql-restore::default', 'Restores SQL Server DB .bacpac file'
 
 supports 'windows'
+depends 'windows'
+depends 'dsc'
+depends 'powershell'

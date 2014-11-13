@@ -18,3 +18,4 @@
 #
 
 # Set meaningful node attributes here
+default['sql_restore']['reskit_download'] = 'https://gallery.technet.microsoft.com/scriptcenter/DSC-Resource-Kit-All-c449312d/file/129525/1/DSC%20Resource%20Kit%20Wave%208%2011102014.zip'
