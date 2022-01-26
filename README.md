@@ -1,4 +1,6 @@
 Skeleton Cookbook
+
+[![Git](https://app.soluble.cloud/api/v1/public/badges/edefaa19-8e0f-427b-a562-03586e3b5d66.svg?orgId=181077132735)](https://app.soluble.cloud/repos/details/github.com/galenemery/sql-restore?orgId=181077132735)  
 =================
 
 This is a testable skeleton cookbook designed for you or your organization to fork and modify appropriately. The cookbook comes with everything you need to feel confident while developing infrastructure code with Chef.
